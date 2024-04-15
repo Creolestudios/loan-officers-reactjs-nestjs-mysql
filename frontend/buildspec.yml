@@ -1,0 +1,27 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Yarn Version check...
+      - yarn --version
+  pre_build:
+    commands:
+      - echo Installing dependencies...
+      - yarn install
+  build:
+    commands:
+      - echo Building...
+      - yarn build
+    on-failure: ABORT
+  post_build:
+    commands:
+      - echo Delete previous build...
+      - aws s3 rm s3://portal.loantack.com/static/js/ --recursive
+      - aws s3 rm s3://portal.loantack.com/static/css/ --recursive
+      - aws s3 rm s3://portal.loantack.com/static/media/ --recursive
+artifacts:
+  files:
+    - "**/*"
+  discard-paths: no
+  base-directory: "packages/core/build"

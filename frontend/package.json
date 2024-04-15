@@ -1,0 +1,41 @@
+{
+  "name": "loantack-lo-frontend",
+  "description": "Loantack LO panel",
+  "version": "3.0.6",
+  "private": true,
+  "author": "Creole Studios",
+  "workspaces": [
+    "shared/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "clean": "lerna clean --yes && rimraf node_modules",
+    "clean:build": "lerna exec -- rimraf \"{.next,dist,out,build,.docz}\"",
+    "start": "yarn workspace @iso/cra run start",
+    "build": "yarn workspace @iso/cra run build",
+    "win:build": "yarn workspace @iso/cra run win:build",
+    "serve": "yarn workspace @iso/cra run serve"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,md,css}": [
+      "prettier --trailing-comma es5 --single-quote --write"
+    ]
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "cross-env": "^7.0.2",
+    "husky": "^4.2.5",
+    "lerna": "^3.22.1",
+    "lint-staged": "^10.2.10",
+    "prettier": "^2.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "rimraf": "^3.0.2",
+    "serve": "^11.3.2"
+  },
+  "dependencies": {}
+}

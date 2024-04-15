@@ -1,0 +1,11 @@
+const actions = {
+  MARKETING_QRCODE: 'MARKETING_QRCODE',
+  MARKETING_QRCODE_SUCCESS: 'MARKETING_QRCODE_SUCCESS',
+  MARKETING_QRCODE_ERROR: 'MARKETING_QRCODE_ERROR',
+
+  getQrCode: () => ({
+    type: actions.MARKETING_QRCODE,
+  }),
+};
+
+export default actions;

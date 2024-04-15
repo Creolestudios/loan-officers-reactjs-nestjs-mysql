@@ -1,0 +1,133 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+div(style='max-width: 600px;min-width:320px;text-align: center;font-family:sans-serif;color: #1f2428;margin: auto;padding-bottom: 100px;position: relative;font-size: 14px;')
+  div(style=`width: 100%;padding: 20px 20px 30px;background-image: url(${imageData['shape-1']});background-repeat: no-repeat;background-position: top center;background-size: cover;box-sizing: border-box;`)
+    div(style='width:100%;display: inline-block;vertical-align: top;text-align: left;')
+      img(src=`${imageData.logo}` style='width: 200px;margin-left: 12px;margin-bottom: 10px;')
+    div(style='width:350px;display: inline-block;vertical-align: top;')
+      p(style='width: calc(100% - 85px);display: inline-block;margin: 0;text-align: right;color: #fff;line-height: 23.4px;')
+        b(style='font-size: 20px;font-weight: 700;margin-bottom: 10px;display: block;')= `${name}`
+        //- br
+        b(style='font-size: 20px;font-weight: 500;margin-bottom: 10px;display: block;')= `${company_name}`
+        //- br
+        b(style='font-size: 20px;font-weight: 500;margin-bottom: 10px;display: block;')= `${street_details}`
+        //- br
+        b(style='font-size: 20px;font-weight: 500;margin-bottom: 10px;display: block;')= `${city}`
+        //- br
+        b(style='font-size: 20px;font-weight: 500;margin-bottom: 10px;display: block;')= `${contact_info}`
+        //- br
+      img(src=`${profile_photo}` style='width: 69px;vertical-align: top;margin-left: 15px;')
+  div(style='background-color:#F5F6FA;padding: 30px;width: 100%;box-sizing: border-box;word-break: break-word;')
+    h2(style='color: #4FB263;margin: 0;') Activity Report
+    table(style='width: 100%;margin-top: 30px;border-spacing: 0;border-collapse: collapse;')
+      tr
+        th(style='background-color: #4FB263;padding: 10px;color: #fff;border:1px solid #4FB263;font-size: 17px;' colspan='4')
+          | All Time
+      tr(style='background-color: #fff;')
+        td(style='border:1px solid #E6E7EB;padding: 20px 10px;width: 134px;')
+          b(style='font-size: 24px;') 0
+          br
+          span(style='color: #8D8E90;margin-top: 5px;display: inline-block;') App Views
+        td(style='border:1px solid #E6E7EB;padding: 20px 10px;width: 134px;')
+          b(style='font-size: 24px;') 0
+          br
+          span(style='color: #8D8E90;margin-top: 5px;display: inline-block;') Installations
+        td(style='border:1px solid #E6E7EB;padding: 20px 10px;width: 134px;')
+          b(style='font-size: 24px;')= `${userTotalRegResult}`
+          br
+          span(style='color: #8D8E90;margin-top: 5px;display: inline-block;') Registrations
+        td(style='border:1px solid #E6E7EB;padding: 20px 10px;width: 134px;')
+          b(style='font-size: 24px;')= `${userCalTotalResult}`
+          br
+          span(style='color: #8D8E90;margin-top: 5px;display: inline-block;') Calculations
+    table(style='width: 100%;margin-top: 30px;border-spacing: 0;border-collapse: collapse;')
+      tr
+        th(style='background-color: #4FB263;padding: 10px;color: #fff;border:1px solid #4FB263;font-size: 17px;' colspan='4')
+          | !{dateTimeRender}
+      tr(style='background-color: #fff;')
+        td(style='border:1px solid #E6E7EB;padding: 20px 4px;')
+          b(style='font-size: 24px;')
+            | 0
+            img(src='green.png' style='width: 9px;vertical-align: top;margin: 10px 0 0 5px;')
+          br
+          span(style='color: #8D8E90;margin-top: 5px;display: inline-block;') App Views
+        td(style='border:1px solid #E6E7EB;padding: 20px 4px;')
+          b(style='font-size: 24px;')
+            | 0
+            img(src=`${imageData.red}` style='width: 9px;vertical-align: top;margin: 10px 0 0 5px;')
+          br
+          span(style='color: #8D8E90;margin-top: 5px;display: inline-block;') Installations
+        td(style='border:1px solid #E6E7EB;padding: 20px 4px;')
+          b(style='font-size: 24px;')=`| ${userRegResult}` 
+            img(src='green.png' style='width: 9px;vertical-align: top;margin: 10px 0 0 5px;')
+          br
+          span(style='color: #8D8E90;margin-top: 5px;display: inline-block;') Registrations
+        td(style='border:1px solid #E6E7EB;padding: 20px 4px;')
+          b(style='font-size: 24px;')=`| ${userCalResult}` 
+            img(src=`${imageData.green}` style='width: 9px;vertical-align: top;margin: 10px 0 0 5px;')
+          br
+          span(style='color: #8D8E90;margin-top: 5px;display: inline-block;') Calculations
+    table(style='width: 100%;margin-top: 30px;border-spacing: 0;border-collapse: collapse;')
+      tr
+        th(style='background-color: #4FB263;padding: 10px;color: #fff;border:1px solid #4FB263;font-size: 17px;' colspan='3')
+          | Co-Branding Totals
+      tr(style='background-color: #fff;')
+        td(style='border:1px solid #E6E7EB;padding: 20px 10px;')
+          table(width='100%')
+            tr(style='border-bottom: 1px solid #E6E7EB;')
+              th(style='color: #8D8E90;text-align: left;border-bottom: 1px solid #E6E7EB;padding: 0 0 10px;' width='40%')
+                | NAME
+              th(style='color: #8D8E90;border-bottom: 1px solid #E6E7EB;padding: 0 0 10px;text-align: right;' width='30%')
+                | INSTALLATIONS
+              th(style='color: #8D8E90;border-bottom: 1px solid #E6E7EB;padding: 0 0 10px;text-align: right;' width='30%')
+                | REGISTRATIONS
+            if userCoBrandRegResult.length > 0
+              each userCoBrandRegItem in userCoBrandRegResult
+                tr(style='font-size: 16px;')
+                  td(style='text-align: left;padding: 20px 0 20px;border-bottom: 1px solid #E6E7EB;')
+                    | !{userCoBrandRegItem.name}
+                  td(style='padding: 20px 0 20px;text-align: right;border-bottom: 1px solid #E6E7EB;')
+                    | 0
+                  td(style='padding: 20px 0 20px;text-align: right;border-bottom: 1px solid #E6E7EB;')
+                    | 0
+
+            else
+              tr(style='font-size: 16px;')
+                td(style='text-align: left;padding: 20px 0 20px;border-bottom: 1px solid #E6E7EB;')
+                  | --
+                td(style='padding: 20px 0 20px;text-align: right;border-bottom: 1px solid #E6E7EB;')
+                  | --
+                td(style='padding: 20px 0 20px;text-align: right;border-bottom: 1px solid #E6E7EB;')
+                  | --
+
+    table(style='width: 100%;margin-top: 30px;border-spacing: 0;border-collapse: collapse;')
+      tr
+        th(style='background-color: #4FB263;padding: 10px;color: #fff;border:1px solid #4FB263;font-size: 17px;' colspan='2')
+          | Registrations
+      tr(style='background-color: #fff;')
+        td(style='border:1px solid #E6E7EB;padding: 20px 10px;')
+          table(width='100%')
+            tr(style='border-bottom: 1px solid #E6E7EB;')
+              th(style='color: #8D8E90;text-align: left;border-bottom: 1px solid #E6E7EB;padding: 0 0 10px;' width='50%')
+                | NAME
+              th(style='color: #8D8E90;border-bottom: 1px solid #E6E7EB;padding: 0 0 10px;text-align: right;' width='50%')
+                | PARTNER
+            if userDetailRegResult.length > 0
+              each userDetailRegItem in userDetailRegResult
+                tr(style='font-size: 16px;')
+                  td(style='text-align: left;padding: 20px 0 20px;border-bottom: 1px solid #E6E7EB;line-height: 30px')
+                    | !{userDetailRegItem.name}
+                    br
+                    | !{userDetailRegItem.email}
+                  td(style='padding: 20px 0 20px;text-align: right;border-bottom: 1px solid #E6E7EB;vertical-align: top;')
+                    | --
+            else
+              tr(style='font-size: 16px;')
+                td(style='text-align: left;padding: 20px 0 20px;border-bottom: 1px solid #E6E7EB;line-height: 30px')
+                  | --
+                  br
+                  | --
+                td(style='padding: 20px 0 20px;text-align: right;border-bottom: 1px solid #E6E7EB;vertical-align: top;')
+                  | --

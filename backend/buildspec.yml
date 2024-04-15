@@ -1,0 +1,38 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - npm config set strict-ssl false -g
+  pre_build:
+    commands:
+      - echo NODE JS version
+      - node -v
+      - echo Installing dependencies...
+      - npm install
+  build:
+    commands:
+      - echo check before folders...
+      - ls
+      - echo Building...
+      - npm run build
+      - echo check after folders...
+      - ls
+artifacts:
+  files:
+    - Procfile
+    - package.json
+    - .npmrc
+    - package-lock.json
+    - "dist/**/*"
+    - "node_modules/**/*"
+    - "public/**/*"
+    - "email_template/**/*"
+    - ".platform/**/*"
+    - ".ebextensions/**/*"
+    - loantack-firebase-adminsdk-dev.json
+    - loantack-firebase-adminsdk-prod.json
+    - loantack-firebase-adminsdk-stag.json
+    - README.md
+  discard-paths: no
+  base-directory: "./"

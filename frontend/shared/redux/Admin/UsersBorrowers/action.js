@@ -1,0 +1,28 @@
+const actions = {
+  GET_USERS_BORROWER: 'GET_USERS_BORROWER',
+  GET_USERS_BORROWER_SUCCESS: 'GET_USERS_BORROWER_SUCCESS',
+  GET_USERS_BORROWER_ERROR: 'GET_USERS_BORROWER_ERROR',
+
+  ADMIN_ACTIVITY_USERS_DETAILES: 'ADMIN_ACTIVITY_USERS_DETAILES',
+  ADMIN_ACTIVITY_USERS_DETAILES_SUCCESS:
+    'ADMIN_ACTIVITY_USERS_DETAILES_SUCCESS',
+  ADMIN_ACTIVITY_USERS_DETAILES_ERROR: 'ADMIN_ACTIVITY_USERS_ERROR',
+
+  USERS_BORROWER_PAGE_DETAILES: 'USERS_BORROWER_PAGE_DETAILES',
+
+  getUsersBorrower: (payload) => ({
+    type: actions.GET_USERS_BORROWER,
+    payload,
+  }),
+
+  saveUserBorroersPageDetailes: (payload) => ({
+    type: actions.USERS_BORROWER_PAGE_DETAILES,
+    payload,
+  }),
+  getUserDetailes: (payload) => ({
+    type: actions.ADMIN_ACTIVITY_USERS_DETAILES,
+    payload,
+  }),
+};
+
+export default actions;

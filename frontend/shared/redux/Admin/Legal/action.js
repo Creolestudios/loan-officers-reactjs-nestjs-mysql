@@ -1,0 +1,23 @@
+const actions = {
+  APP_DEFAULT_LEGAL: 'APP_DEFAULT_LEGAL',
+  APP_DEFAULT_LEGAL_SUCCESS: 'APP_DEFAULT_LEGAL_SUCCESS',
+  APP_DEFAULT_LEGAL_ERROR: 'APP_DEFAULT_LEGAL_ERROR',
+
+  UPDATE_APP_DEFAULT_LEGAL: 'UPDATE_APP_DEFAULT_LEGAL',
+  UPDATE_APP_DEFAULT_LEGAL_SUCCESS: 'UPDATE_APP_DEFAULT_LEGAL_SUCCESS',
+  UPDATE_APP_DEFAULT_LEGAL_ERROR: 'UPDATE_APP_DEFAULT_LEGAL_ERROR',
+
+  getLegalData: (payload) => {
+    return {
+      type: actions.APP_DEFAULT_LEGAL,
+      payload,
+    };
+  },
+
+  updateLegalData: (payload) => ({
+    type: actions.UPDATE_APP_DEFAULT_LEGAL,
+    payload,
+  }),
+};
+
+export default actions;

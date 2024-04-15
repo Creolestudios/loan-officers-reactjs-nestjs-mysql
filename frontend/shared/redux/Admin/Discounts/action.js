@@ -1,0 +1,54 @@
+const actions = {
+  GET_DISCOUNT: 'GET_DISCOUNT',
+  GET_DISCOUNT_SUCCESS: 'GET_DISCOUNT_SUCCESS',
+  GET_DISCOUNT_ERROR: 'GET_DISCOUNT_ERROR',
+
+  VIEW_COUPONS: 'VIEW_COUPONS',
+  VIEW_COUPONS_SUCCESS: 'VIEW_COUPONS_SUCCESS',
+  VIEW_COUPONS_ERROR: 'VIEW_COUPONS_ERROR',
+
+  ADD_GET_DISCOUNT: 'ADD_GET_DISCOUNT',
+  ADD_GET_DISCOUNT_SUCCESS: 'ADD_GET_DISCOUNT_SUCCESS',
+  ADD_GET_DISCOUNT_ERROR: 'ADD_GET_DISCOUNT_ERROR',
+
+  DELETE_DISCOUNT_CODE: 'DELETE_DISCOUNT_CODE',
+  DELETE_DISCOUNT_CODE_SUCCESS: 'DELETE_DISCOUNT_CODE_SUCCESS',
+  DELETE_DISCOUNT_CODE_ERROR: 'DELETE_DISCOUNT_CODE_ERROR',
+
+  VIEW_PROMO_CODE: 'VIEW_PROMO_CODE',
+  VIEW_PROMO_CODE_SUCCESS: 'VIEW_PROMO_CODE_SUCCESS',
+  VIEW_PROMO_CODE_ERROR: 'VIEW_PROMO_CODE_ERROR',
+
+  EDIT_DISCOUNT_CODE: 'EDIT_DISCOUNT_CODE',
+  EDIT_DISCOUNT_CODE_SUCCESS: 'EDIT_DISCOUNT_CODE_SUCCESS',
+  EDIT_DISCOUNT_CODE_ERROR: 'EDIT_DISCOUNT_CODE_ERROR',
+
+  getDiscount: () => ({
+    type: actions.GET_DISCOUNT,
+  }),
+  viewCoupons: (payload) => ({
+    type: actions.VIEW_COUPONS,
+    payload,
+  }),
+
+  viewPromoCode: (payload) => ({
+    type: actions.VIEW_PROMO_CODE,
+    payload,
+  }),
+
+  editDiscountCode: (payload) => ({
+    type: actions.EDIT_DISCOUNT_CODE,
+    payload,
+  }),
+
+  addDiscount: (payload) => ({
+    type: actions.ADD_GET_DISCOUNT,
+    payload,
+  }),
+  deleteDiscountCode: (payload) => ({
+    type: actions.DELETE_DISCOUNT_CODE,
+    payload,
+  }),
+};
+
+export default actions;

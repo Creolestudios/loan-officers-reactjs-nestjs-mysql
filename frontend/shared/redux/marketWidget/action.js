@@ -1,0 +1,29 @@
+const actions = {
+  WIDGETS_DEFAULT: 'WIDGETS_DEFAULT',
+  WIDGETS_DEFAULT_SUCCESS: 'WIDGETS_DEFAULT_SUCCESS',
+  WIDGETS_DEFAULT_ERROR: 'WIDGETS_DEFAULT_ERROR',
+
+  CALCULATE_WIDGETS: 'CALCULATE_WIDGETS',
+  CALCULATE_WIDGETS_SUCCESS: 'CALCULATE_WIDGETS_SUCCESS',
+  CALCULATE_WIDGETS_ERROR: 'CALCULATE_WIDGETS_ERROR',
+
+  CALCULATE_WIDGETS_TYPE_LIST: 'CALCULATE_WIDGETS_TYPE_LIST',
+  CALCULATE_WIDGETS_TYPE_LIST_SUCCESS: 'CALCULATE_WIDGETS_TYPE_LIST_SUCCESS',
+
+  getWidgetsDefault: (payload) => ({
+    type: actions.WIDGETS_DEFAULT,
+    payload,
+  }),
+
+  getWidgetsTypesList: (payload) => ({
+    type: actions.CALCULATE_WIDGETS_TYPE_LIST,
+    payload,
+  }),
+
+  calculateWidgets: (payload) => ({
+    type: actions.CALCULATE_WIDGETS,
+    payload,
+  }),
+};
+
+export default actions;
